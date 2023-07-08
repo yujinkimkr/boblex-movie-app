@@ -1,0 +1,47 @@
+.similar__container {
+  display: flex;
+  max-height: 330px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: red; /*스크롤바의 색상*/
+  }
+
+  &::-webkit-scrollbar-track {
+    border: 3px solid rgb(193, 193, 193);
+  }
+
+  .similar__inner {
+    position: relative;
+    margin-bottom: 1rem;
+
+    img {
+      width: 370px;
+      border-radius: 8px;
+      height: 100%;
+      box-shadow: 2px 2px 3px rgb(79, 79, 79);
+    }
+  }
+
+  .title {
+    // text-overflow: ellipsis;
+
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    bottom: 45%;
+    left: 0;
+    // color: white;
+    color: black;
+    // background-color: rgb(1, 1, 1);
+    background-color: rgba(189, 189, 189, 0.645);
+    // border-bottom-left-radius: 8px;
+    // border-bottom-right-radius: 8px;
+  }
+}

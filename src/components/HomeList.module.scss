@@ -1,0 +1,33 @@
+.list__inner {
+  // background-color: rgba(255, 255, 255, 0.9);
+
+  border: 2px solid white;
+
+  margin: 2rem 5rem;
+  border-radius: 14px;
+  padding-bottom: 8px;
+
+  h1 {
+    padding-top: 40px;
+    font-size: 2rem;
+  }
+
+  .movie__list {
+    margin: 50px;
+    display: flex;
+    font-size: 0.8rem;
+    overflow-x: scroll;
+    padding-bottom: 20px;
+  }
+
+  .movie__list::-webkit-scrollbar {
+    height: 4.5px;
+  }
+  .movie__list::-webkit-scrollbar-thumb {
+    background-color: red;
+  }
+
+  .movie__list::-webkit-scrollbar-track {
+    border: 3px solid rgb(193, 193, 193);
+  }
+}

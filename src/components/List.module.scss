@@ -1,0 +1,17 @@
+.list__inner {
+  display: block;
+  margin: 0 10rem;
+}
+
+h1 {
+  margin: 3rem;
+  color: red;
+  text-shadow: 2px 3px 2px rgb(89, 18, 18);
+  text-align: center;
+}
+
+.movie__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

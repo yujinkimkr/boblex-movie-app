@@ -1,0 +1,50 @@
+/* navbar */
+a {
+  color: rgb(194, 193, 193);
+}
+
+.navbar__list {
+  background-color: rgb(240, 240, 240);
+  background-color: black;
+
+  justify-content: space-around;
+  display: flex;
+  box-shadow: 3px 2px 4px rgb(177, 176, 176);
+
+  .logo {
+    color: red;
+    font-size: 2rem;
+  }
+}
+
+.nav-effect {
+  color: red;
+}
+
+.menu__list {
+  flex: 0.7;
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    transition: 0.3s;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+/* PC (Resolution 1024px)*/
+@media all and (min-width: 1024px) {
+}
+
+/* Tablets Horizontal Tablets Vertical (Resolution 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+  .menu__list {
+    display: none;
+  }
+}

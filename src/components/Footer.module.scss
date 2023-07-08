@@ -1,0 +1,36 @@
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.208);
+  width: 100%;
+  margin-top: 1 00px;
+  padding: 3rem 0;
+
+  color: #ffffffc3;
+  display: flex;
+  justify-content: space-around;
+
+  a {
+    color: red;
+  }
+
+  ul:first-child {
+    margin-top: 0;
+    padding-left: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    flex: 0.1;
+  }
+
+  ul:not(ul:first-child) {
+    margin-top: 10px;
+
+    li:first-child {
+      color: grey;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    li:not(li:first-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.actors {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // max-width: 800px;
+  width: 100%;
+  .actor-pic {
+    height: 180px;
+  }
+
+  .actor-info {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px 3px rgb(81, 81, 81);
+    position: relative;
+    width: 200px;
+    padding: 0 20px;
+
+    img {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .actor-text {
+      margin-left: 2px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100px;
+      margin: 0;
+      padding: 5px 8px;
+      font-size: 0.9rem;
+
+      span:last-child {
+        color: rgb(80, 80, 80);
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.actors::-webkit-scrollbar {
+  height: 4px;
+}
+.actors::-webkit-scrollbar-thumb {
+  background-color: red; /*스크롤바의 색상*/
+}
+
+.actors::-webkit-scrollbar-track {
+  /* background-color: rgb(78, 178, 182); 스크롤바 트랙 색상 */
+  border: 3px solid rgb(193, 193, 193);
+}
+
+.actor__card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+
+  img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 120px;
+  }
+
+  p {
+    padding: 0 0.5rem;
+    margin: 0;
+
+    span:last-child {
+      color: grey;
+      font-size: 0.8rem;
+    }
+  }
+}

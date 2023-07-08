@@ -1,0 +1,122 @@
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 5rem 7rem;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .poster-container {
+    text-align: center;
+
+    img {
+      width: 25rem;
+      height: 100%;
+    }
+  }
+
+  .movieInfo-container {
+    margin: 0 1rem;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255, 0.55);
+
+    width: 800px;
+
+    .movieInfo-top {
+      margin-bottom: 1rem;
+      h2 {
+        margin: 1.5rem 0;
+      }
+    }
+
+    .content-menu {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      max-height: 330px;
+
+      .overview-info {
+        margin-top: 20px;
+        display: flex;
+        justify-content: left;
+
+        > ul {
+          margin-right: 2.5rem;
+        }
+      }
+
+      ul {
+        padding-left: 0;
+
+        & > li:last-child {
+          color: rgb(84, 83, 83);
+          font-size: 0.9rem;
+        }
+      }
+
+      .genres > li:first-child > span:not(:last-child)::after {
+        content: ", ";
+      }
+    }
+  }
+
+  .movieInfo-menu {
+    border-bottom: 3px solid red;
+    padding: 1rem 0;
+    margin: 1rem 0;
+
+    display: flex;
+    justify-content: space-around;
+
+    span {
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .play-btn {
+    cursor: pointer;
+    font-family: "Racing Sans One", cursive;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: 0.7s;
+    position: relative;
+    padding: 0;
+
+    p {
+      transition: 0.8s;
+      opacity: 0;
+      text-align: right;
+    }
+
+    div {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      width: 120px;
+      p {
+        opacity: 1;
+        font-size: 1.2rem;
+
+        &::after {
+          content: "Play";
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,6 @@ const Actor = (props) => {
   const [actorInfo, setActorInfo] = useState({});
 
   const API_KEY = "9e550adf8759e45fbff105734c32aaff";
-  // const url = `https://api.themoviedb.org/3/movie/${props.id}/credits?api_key=9e550adf8759e45fbff105734c32aaff`;
   const url = `https://api.themoviedb.org/3/movie/${props.id}/credits?api_key=${API_KEY}`;
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const Actor = (props) => {
         setActorInfo(json);
       })
       .catch((err) => console.error("error:" + err));
-  }, []);
+  }, [url]);
 
   return (
     <div className={classes.actors}>

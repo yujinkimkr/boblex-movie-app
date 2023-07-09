@@ -3,5 +3,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: black;
+  /* background-color: black; */
+
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(0, 0, 0),
+    rgba(163, 18, 18, 0.8)
+  );
 }

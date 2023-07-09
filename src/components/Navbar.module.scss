@@ -1,15 +1,17 @@
-/* navbar */
 a {
   color: rgb(194, 193, 193);
 }
 
 .navbar__list {
-  background-color: rgb(240, 240, 240);
-  background-color: black;
+  z-index: 10;
 
+  background-color: black;
   justify-content: space-around;
   display: flex;
-  box-shadow: 3px 2px 4px rgb(177, 176, 176);
+  box-shadow: 3px 2px 4px rgb(24, 11, 11);
+  position: fixed;
+  width: 100%;
+  top: 0;
 
   .logo {
     color: red;

@@ -1,13 +1,14 @@
 .list__inner {
-  border: 2px solid white;
+  box-shadow: 4px 3px 4px rgb(37, 35, 35);
 
-  margin: 2rem 5rem;
+  margin: 5rem;
   border-radius: 14px;
   padding-bottom: 8px;
 
   h1 {
     padding-top: 40px;
     font-size: 2rem;
+    color: red;
   }
 
   .movie__list {

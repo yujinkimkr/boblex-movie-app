@@ -81,7 +81,6 @@ const Content = () => {
   /* Crew Info */
   const [crewInfo, setCrewInfo] = useState({});
 
-  // const crewUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
   const crewUrl = useMemo(
     () => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`,
     [id]
@@ -129,7 +128,13 @@ const Content = () => {
               ))}
             &nbsp; | &nbsp;{" "}
             <img src={star} alt="star" style={{ width: "12px" }} />{" "}
-            {Math.round(movieInfo.vote_average * 10) / 10}
+            {Math.round(movieInfo.vote_average * 10) / 10} &nbsp; | &nbsp;
+            {movieInfo.genres &&
+              movieInfo.genres.map((genre) => (
+                <span className={classes.genre} key={genre.id}>
+                  {genre.name}
+                </span>
+              ))}
           </div>
         </div>
         <div className={classes["movieInfo-menu"]}>
@@ -141,8 +146,8 @@ const Content = () => {
 
         <div className={classes["content-menu"]}>
           {menuShowState.overview && (
-            <div>
-              <span>{movieInfo.overview}</span>
+            <div className={classes["content-menu__inner"]}>
+              <span className={classes.overview}>{movieInfo.overview}</span>
               <div className={classes["overview-info"]}>
                 {crewInfo &&
                   crewInfo.crew &&
@@ -152,24 +157,13 @@ const Content = () => {
                         member.job === "Director" || member.job === "Novel"
                     )
                     .map((member) => (
-                      <ul key={member.name}>
+                      <ul className={classes.crew} key={member.name}>
                         <li key={member.name}>{member.name}</li>
                         <li key={member.job}>{member.job} </li>
                       </ul>
                     ))}
               </div>
 
-              <ul className={classes.genres}>
-                <li>
-                  {movieInfo.genres &&
-                    movieInfo.genres.map((genre) => (
-                      <span className={classes.genre} key={genre.id}>
-                        {genre.name}
-                      </span>
-                    ))}
-                </li>
-                <li>Genre</li>
-              </ul>
               <a
                 href={`${movieInfo.homepage}`}
                 target="_blank"
@@ -178,7 +172,7 @@ const Content = () => {
                 <div>
                   <button className={classes["play-btn"]}>
                     <div>
-                      <img src={play} alt="play" style={{ width: "18px" }} />
+                      <img src={play} alt="play" style={{ width: "15px" }} />
                     </div>
                     <p></p>
                   </button>
@@ -186,9 +180,12 @@ const Content = () => {
               </a>
             </div>
           )}
-          {menuShowState.trailer && <Video id={movieInfo.id} />}
-          {menuShowState.similarMovie && <Similar id={id} />}
-          {menuShowState.actors && <Actor id={id} />}
+          <div className={classes.content__other}>
+            {menuShowState.trailer && <Video id={movieInfo.id} />}
+            {menuShowState.similarMovie && <Similar id={id} />}
+
+            {menuShowState.actors && <Actor id={id} />}
+          </div>
         </div>
       </div>
     </div>

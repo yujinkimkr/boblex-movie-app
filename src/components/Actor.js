@@ -31,10 +31,10 @@ const Actor = (props) => {
               <img
                 src={NoImg}
                 alt="Undefined"
-                style={{ width: "120px", height: "180px" }}
+                style={{ width: "90px", height: "135px" }}
               />
             )}
-            <p>
+            <p className={classes["text-info"]}>
               <span>{cast.name}</span> <br />
               <span>{cast.character}</span>
             </p>

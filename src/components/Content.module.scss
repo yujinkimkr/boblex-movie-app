@@ -1,63 +1,81 @@
 .content-container {
   display: flex;
   justify-content: space-around;
+
   padding: 5rem 7rem;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 
   .poster-container {
-    text-align: center;
+    display: flex;
+    align-items: center;
 
     img {
-      width: 25rem;
-      height: 100%;
+      width: 17rem;
+      height: 25rem;
     }
   }
 
   .movieInfo-container {
-    margin: 0 1rem;
-    padding: 2rem;
+    margin: 2rem 1rem;
     background-color: rgb(255, 255, 255, 0.55);
 
     width: 800px;
+    height: 25rem;
 
     .movieInfo-top {
-      margin-bottom: 1rem;
+      margin: 1rem;
+      div {
+        font-size: 0.8rem;
+      }
+
       h2 {
-        margin: 1.5rem 0;
+        font-size: 1.2rem;
+      }
+
+      .genre:not(:last-child)::after {
+        content: ", ";
       }
     }
 
     .content-menu {
       position: relative;
-      width: 100%;
+      width: 95%;
       display: flex;
       flex-wrap: wrap;
-
       max-height: 330px;
+      margin: 0 1rem;
+
+      .content__other {
+        position: relative;
+        max-width: 700px;
+      }
+
+      .content-menu__inner {
+        .overview {
+          display: block;
+          font-size: 0.9rem;
+          width: calc(100% - 2rem);
+          max-height: 6rem;
+          overflow-y: auto;
+        }
+      }
 
       .overview-info {
-        margin-top: 20px;
+        margin-top: 10px;
         display: flex;
         justify-content: left;
 
-        > ul {
-          margin-right: 2.5rem;
+        .crew {
+          padding: 0;
+          font-size: 0.85rem;
+          margin-right: 1rem;
+
+          li:last-child {
+            color: rgb(90, 90, 90);
+          }
         }
-      }
-
-      ul {
-        padding-left: 0;
-
-        & > li:last-child {
-          color: rgb(84, 83, 83);
-          font-size: 0.9rem;
-        }
-      }
-
-      .genres > li:first-child > span:not(:last-child)::after {
-        content: ", ";
       }
     }
   }
@@ -66,6 +84,7 @@
     border-bottom: 3px solid red;
     padding: 1rem 0;
     margin: 1rem 0;
+    font-size: 0.8rem;
 
     display: flex;
     justify-content: space-around;
@@ -83,8 +102,8 @@
     cursor: pointer;
     font-family: "Racing Sans One", cursive;
     background-color: red;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 3px;
     display: flex;
@@ -117,6 +136,57 @@
           content: "Play";
         }
       }
+    }
+  }
+}
+
+.overview::-webkit-scrollbar {
+  width: 4px;
+}
+.overview::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+.overview::-webkit-scrollbar-track {
+  border: 3px solid rgb(193, 193, 193);
+}
+
+/* PC (Resolution 1024px)*/
+@media all and (min-width: 1024px) {
+}
+
+/* Tablets Horizontal Tablets Vertical (Resolution 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+  .content-container {
+    padding: 5rem 1rem;
+    flex-direction: column;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // transform: translateX(25%);
+
+    .movieInfo-container {
+      margin: auto;
+      width: 80vw;
+    }
+
+    .poster-container {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 2rem;
+      width: 80vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .content__other {
+      width: 95%;
     }
   }
 }

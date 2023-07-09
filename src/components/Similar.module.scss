@@ -1,6 +1,7 @@
 .similar__container {
   display: flex;
-  max-height: 330px;
+  width: 95%;
+  max-height: 220px;
   flex-wrap: wrap;
   justify-content: space-around;
   overflow-y: scroll;
@@ -21,7 +22,7 @@
     margin-bottom: 1rem;
 
     img {
-      width: 370px;
+      width: 220px;
       border-radius: 8px;
       height: 100%;
       box-shadow: 2px 2px 3px rgb(79, 79, 79);

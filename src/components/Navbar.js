@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Navbar.module.scss";
+import menuBar from "../images/menu-bar.svg";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,9 +9,12 @@ const Navbar = () => {
 
   return (
     <div className={classes["navbar__list"]}>
-      <Link to="/">
-        <div className={classes.logo}>Boblex</div>
-      </Link>
+      <div>
+        <Link to="/">
+          <div className={classes.logo}>Boblex</div>
+        </Link>
+        <img className={classes["menu-bar"]} src={menuBar} alt="menu-bar" />
+      </div>
       <ul className={classes["menu__list"]}>
         <Link to="/TopRated">
           <li

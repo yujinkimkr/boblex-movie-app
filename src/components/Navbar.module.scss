@@ -4,7 +4,6 @@ a {
 
 .navbar__list {
   z-index: 10;
-
   background-color: black;
   justify-content: space-around;
   display: flex;
@@ -12,6 +11,11 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+  }
 
   .logo {
     color: red;
@@ -38,15 +42,34 @@ a {
 
 /* PC (Resolution 1024px)*/
 @media all and (min-width: 1024px) {
+  .menu-bar {
+    display: none;
+  }
 }
 
 /* Tablets Horizontal Tablets Vertical (Resolution 768px ~ 1023px)*/
 @media all and (min-width: 768px) and (max-width: 1023px) {
+  .menu-bar {
+    display: none;
+  }
 }
 
 /* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
 @media all and (max-width: 767px) {
+  .navbar__list {
+    div:first-child {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0.3rem 1rem;
+    }
+  }
+
   .menu__list {
     display: none;
+  }
+
+  img {
+    width: 1.6rem;
   }
 }

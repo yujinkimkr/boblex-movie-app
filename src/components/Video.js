@@ -34,13 +34,19 @@ const Video = (props) => {
   }, [url, fetch, options]);
 
   return (
-    <div style={{ display: "flex", width: "100%" }}>
+    <div
+      style={{
+        position: "relative",
+        height: "100%",
+        width: "100%",
+      }}
+    >
       {videoInfo && videoInfo.results && (
         <iframe
           title={`video of ${videoInfo.title}(${videoInfo.id})`}
           key={videoInfo.id}
           width="100%"
-          height="330"
+          height="100%"
           src={`https://www.youtube.com/embed/${videoInfo.results[0].key}`}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -52,5 +58,3 @@ const Video = (props) => {
 };
 
 export default Video;
-
-// https://api.themoviedb.org/3/movie/385687/videos?api_key=9e550adf8759e45fbff105734c32aaff

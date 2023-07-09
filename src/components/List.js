@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-// import loader from "../images/loading.gif";
+import React, { useState, useEffect, useMemo } from "react";
 import Movie from "./Movie";
 import classes from "./List.module.scss";
 
 const List = ({ uri, topic }) => {
-  // const [loading, setLoading] = useState(true);
   const [playingMovies, setplayingMovies] = useState([]);
 
   const fetch = require("node-fetch");
@@ -12,24 +10,26 @@ const List = ({ uri, topic }) => {
 
   const url = `${uri}?api_key=${API_KEY}`;
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTU1MGFkZjg3NTllNDVmYmZmMTA1NzM0YzMyYWFmZiIsInN1YiI6IjY0NzBhYWE5MzM2ZTAxMDE0YjYyN2Y3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LerSBHzskWc5ZTkzh1S_dQkgDGQZl-3nP5IVPraCtno",
-    },
-  };
+  const options = useMemo(
+    () => ({
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTU1MGFkZjg3NTllNDVmYmZmMTA1NzM0YzMyYWFmZiIsInN1YiI6IjY0NzBhYWE5MzM2ZTAxMDE0YjYyN2Y3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LerSBHzskWc5ZTkzh1S_dQkgDGQZl-3nP5IVPraCtno",
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
         setplayingMovies(json);
-        // setLoading(false);
       })
       .catch((err) => console.error("error:" + err));
-  }, []);
+  }, [url, options, fetch]);
 
   return (
     <React.Fragment>

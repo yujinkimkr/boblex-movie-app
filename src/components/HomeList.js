@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import loader from "../images/loading.gif";
+import React, { useState, useEffect, useMemo } from "react";
 import Movie from "./Movie";
 import classes from "./HomeList.module.scss";
 
@@ -21,14 +19,17 @@ const HomeList = ({ topic }) => {
   }
   const url = `${uri}?api_key=${API_KEY}`;
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTU1MGFkZjg3NTllNDVmYmZmMTA1NzM0YzMyYWFmZiIsInN1YiI6IjY0NzBhYWE5MzM2ZTAxMDE0YjYyN2Y3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LerSBHzskWc5ZTkzh1S_dQkgDGQZl-3nP5IVPraCtno",
-    },
-  };
+  const options = useMemo(
+    () => ({
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTU1MGFkZjg3NTllNDVmYmZmMTA1NzM0YzMyYWFmZiIsInN1YiI6IjY0NzBhYWE5MzM2ZTAxMDE0YjYyN2Y3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LerSBHzskWc5ZTkzh1S_dQkgDGQZl-3nP5IVPraCtno",
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     fetch(url, options)
@@ -37,7 +38,7 @@ const HomeList = ({ topic }) => {
         setplayingMovies(json);
       })
       .catch((err) => console.error("error:" + err));
-  }, []);
+  }, [url, options, fetch]);
 
   return (
     <div className={classes.list__inner}>

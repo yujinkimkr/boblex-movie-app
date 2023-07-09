@@ -81,8 +81,11 @@ const Content = () => {
   /* Crew Info */
   const [crewInfo, setCrewInfo] = useState({});
 
-  const crewUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
-
+  // const crewUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
+  const crewUrl = useMemo(
+    () => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`,
+    [id]
+  );
   useEffect(() => {
     fetch(crewUrl)
       .then((res) => res.json())

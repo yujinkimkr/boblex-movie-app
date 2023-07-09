@@ -28,12 +28,13 @@ const Video = (props) => {
     };
 
     fetchData();
-  }, []);
+  }, [url, fetch, options]);
 
   return (
     <div style={{ display: "flex", width: "100%" }}>
       {videoInfo && videoInfo.results && (
         <iframe
+          title={`video of ${videoInfo.title}(${videoInfo.id})`}
           key={videoInfo.id}
           width="100%"
           height="330"

@@ -5,7 +5,7 @@
   height: 100vh;
   text-align: center;
   position: relative;
-  padding-top: 12rem;
+  padding-top: 10rem;
 
   &::after {
     content: "";
@@ -27,7 +27,7 @@
   }
 
   h1 {
-    color: #d4d4d4;
+    color: #fff;
 
     p {
       margin: 0;
@@ -107,4 +107,16 @@
     opaicty: 1;
     transform: translateX(0);
   }
+}
+
+/* PC (Resolution 1024px)*/
+@media all and (min-width: 1024px) {
+}
+
+/* Tablets Horizontal Tablets Vertical (Resolution 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
+@media all and (max-width: 767px) {
 }

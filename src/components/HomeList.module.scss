@@ -30,3 +30,10 @@
     border: 3px solid rgb(193, 193, 193);
   }
 }
+
+/* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+  .list__inner {
+    margin: 1rem;
+  }
+}

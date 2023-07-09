@@ -1,8 +1,7 @@
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.208);
   width: 100%;
-  // margin-top: 100px;
-  padding: 3rem 0;
+  padding-top: 3rem;
 
   color: #ffffffc3;
   display: flex;
@@ -48,10 +47,11 @@
 @media all and (max-width: 767px) {
   .footer {
     flex-direction: column;
+    // padding-left: 3rem;
 
     ul {
-      text-align: center;
       padding-left: 0;
+      margin-left: 2rem;
     }
   }
 }

@@ -33,8 +33,8 @@ const List = ({ uri, topic }) => {
 
   return (
     <React.Fragment>
-      <h1>{topic}</h1>
       <div className={classes.list__inner}>
+        <h1 classsName={classes["list-title"]}>{topic}</h1>
         <div className={classes.movie__list}>
           {playingMovies.results &&
             playingMovies.results.map((movie) => (

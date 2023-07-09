@@ -125,18 +125,6 @@
       align-items: center;
       justify-content: center;
     }
-
-    &:hover {
-      width: 120px;
-      p {
-        opacity: 1;
-        font-size: 1.2rem;
-
-        &::after {
-          content: "Play";
-        }
-      }
-    }
   }
 }
 
@@ -153,10 +141,36 @@
 
 /* PC (Resolution 1024px)*/
 @media all and (min-width: 1024px) {
+  .play-btn {
+    &:hover {
+      width: 120px;
+      p {
+        opacity: 1;
+        font-size: 1.2rem;
+
+        &::after {
+          content: "Play";
+        }
+      }
+    }
+  }
 }
 
 /* Tablets Horizontal Tablets Vertical (Resolution 768px ~ 1023px)*/
 @media all and (min-width: 768px) and (max-width: 1023px) {
+  .play-btn {
+    &:hover {
+      width: 120px;
+      p {
+        opacity: 1;
+        font-size: 1.2rem;
+
+        &::after {
+          content: "Play";
+        }
+      }
+    }
+  }
 }
 
 /* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
@@ -171,14 +185,14 @@
 
     .movieInfo-container {
       margin: auto;
-      width: 80vw;
+      width: 90vw;
     }
 
     .poster-container {
       margin: auto;
       text-align: center;
       margin-bottom: 2rem;
-      width: 80vw;
+      // width: 80vw;
 
       img {
         width: 100%;

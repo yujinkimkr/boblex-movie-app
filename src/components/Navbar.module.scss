@@ -67,13 +67,15 @@ a {
 /* Mobile horizontal, mobile vertical (Resolution 480px ~ 767px)*/
 @media all and (max-width: 767px) {
   .responsive__navbar {
+    position: fixed;
+    top: 0;
+    padding-top: 2rem;
+    width: 100vw;
+    height: 100vh;
     animation: moveFade 0.5s ease-in-out;
 
-    margin-top: 2rem;
-    padding-top: 2rem;
     z-index: 10;
     color: white;
-    height: 100vh;
     background-color: black;
 
     ul {
@@ -96,20 +98,9 @@ a {
     }
   }
 
-  @keyframes moveFade {
-    0% {
-      transform: translateX(-100px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
   .navbar__list {
     justify-content: space-between;
+    padding: 0.5rem 1.5rem;
   }
 
   .menu__list {
@@ -118,5 +109,17 @@ a {
 
   .menu-bar {
     width: 1.5rem;
+  }
+}
+
+@keyframes moveFade {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
